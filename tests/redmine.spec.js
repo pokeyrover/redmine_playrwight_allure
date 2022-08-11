@@ -4,6 +4,8 @@ const { SignInPage } = require('../pages/sign.in.page')
 const { SignUpPage } = require('../pages/sign.up.page')
 const { IssuesPage } = require('../pages/issues.page')
 const { TicketPage } = require('../pages/ticket.page')
+const { GuidePage } = require('../pages/guide.page');
+const { RoadmapGuidePage } = require('../pages/roadmap.guide.page')
 
 
 test("Sign in previously created account", async ({ page }) => {
@@ -32,7 +34,7 @@ test("Sign up by filling in the required fields with random valid data", async (
     await signInPage.confirmMessageExist();
 })
 
-test.only("Go to a last closed patch ticket from the main page", async ({ page }) => {
+test("Go to a last closed patch ticket from the main page", async ({ page }) => {
     const mainPage = new MainPage(page);
     const issuesPage = new IssuesPage(page);
     const ticketPage = new TicketPage(page);
@@ -47,4 +49,19 @@ test.only("Go to a last closed patch ticket from the main page", async ({ page }
     await issuesPage.firstIssueTitleClick();
 
     await ticketPage.isCorrectTicket();
+})
+
+test.only("Go to roadmap guide page from the main page", async ({ page }) => {
+    const mainPage = new MainPage(page);
+    const guidePage = new GuidePage(page);
+    const roadmapGuidePage = new RoadmapGuidePage(page);
+
+    await mainPage.goto();
+    await mainPage.documentationNaviLinkClick();
+    await mainPage.userGuideDocumentationLinkClick();
+
+    await guidePage.clickUserNavigationLink();
+    await guidePage.clickRoadmapGuidelink();
+    
+    await roadmapGuidePage.isRoadmapGuidePage();
 })

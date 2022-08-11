@@ -18,11 +18,24 @@ exports.MainPage = class MainPage {
         this.reigsterLink = page.locator('#account .register');
         this.myPageLink = page.locator('[href="/my/page"]');
         this.profileLink = page.locator('#loggedas .user');
-        this.issuesTab = page.locator('#main-menu .issues')
+        
+        this.issuesTab = page.locator('#main-menu .issues');
+
+        this.documentationNavigationLink = page.locator('.toc [href="#Documentation"]');
+        
+        this.userGuideWikiLink = page.locator('//h2/a[@href="#Documentation"]/../following-sibling::ul//*[contains(@href,"/Guide")]')
     }
 
     async goto() {
         await this.page.goto(this.url);
+    }
+
+    async documentationNaviLinkClick () {
+        await this.documentationNavigationLink.click();
+    }
+
+    async userGuideDocumentationLinkClick () {
+        await this.userGuideWikiLink.click();
     }
 
     async registerClick () {
