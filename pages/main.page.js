@@ -15,9 +15,10 @@ exports.MainPage = class MainPage {
 
         //locators
         this.loginLink = page.locator('.login');
-        this.reigsterLink = page.locator('#account .register')
+        this.reigsterLink = page.locator('#account .register');
         this.myPageLink = page.locator('[href="/my/page"]');
         this.profileLink = page.locator('#loggedas .user');
+        this.issuesTab = page.locator('#main-menu .issues')
     }
 
     async goto() {
@@ -32,6 +33,11 @@ exports.MainPage = class MainPage {
     async signInClick() {
         await this.loginLink.hover();
         await this.loginLink.click();
+    }
+
+    async issuesTabClick() {
+        await this.issuesTab.hover();
+        await this.issuesTab.click();
     }
 
     async userIsLogged() {

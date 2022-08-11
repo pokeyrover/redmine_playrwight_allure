@@ -5,7 +5,7 @@ export const existingUser = {
     password: 'tyughj'
 };
 
-export const baseUrl = 'https://www.redmine.org/'
+export const baseUrl = 'https://www.redmine.org'
 
 const randomFirstName = faker.name.firstName()
 const randomLastName = faker.name.lastName()
