@@ -20,9 +20,6 @@ jobs:
       run: npm install -g allure-commandline --save-dev
     - name: Run Playwright tests
       run: npm run playwright:test:allure
-    - name: Copy History
-      if: always()
-      run: cp -r $(pwd)/docs/history/. $(pwd)/allure-results/history
     - name: Generate Report
       if: always()
       run: allure generate allure-results -o allure-report --clean
