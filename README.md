@@ -1,1 +1,0 @@
-Redmine site testing by playwrigth with reporter
