@@ -11,7 +11,7 @@ const { SearchPage } = require('../pages/search.page');
 
 
 test.describe('Testing a few basic features from the Readmine site', () => {
-    test.skip("Sign in previously created account", async ({ page }) => {
+    test("Sign in previously created account", async ({ page }) => {
         const mainPage = new MainPage(page);
         const signInPage = new SignInPage(page);
     
