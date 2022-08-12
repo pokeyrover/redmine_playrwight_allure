@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Aug 12 11:17:36 UTC 2022","Fri Aug 12 11:17:41 UTC 2022","4626","","tests/redmine.spec.js","","","","Sign in previously created account",""
+"passed","Fri Aug 12 11:17:57 UTC 2022","Fri Aug 12 11:18:08 UTC 2022","11486","","tests/redmine.spec.js","","","","Search random data from the overview page",""
+"passed","Fri Aug 12 11:17:54 UTC 2022","Fri Aug 12 11:17:57 UTC 2022","2907","","tests/redmine.spec.js","","","","Go to roadmap guide page from the main page",""
+"passed","Fri Aug 12 11:17:47 UTC 2022","Fri Aug 12 11:17:54 UTC 2022","6605","","tests/redmine.spec.js","","","","Go to a last closed patch ticket from the main page",""
+"passed","Fri Aug 12 11:17:41 UTC 2022","Fri Aug 12 11:17:47 UTC 2022","6183","","tests/redmine.spec.js","","","","Sign up by filling in the required fields with random valid data",""
