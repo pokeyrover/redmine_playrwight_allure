@@ -69,7 +69,7 @@ exports.MainPage = class MainPage {
             await expect(this.profileLink).toHaveText(existingUser.login);
         }
         else {
-            await this.page.screenshot({ path: './screenshots/"My_page"_or/and_profile_link(s)_is_not_visible_after_user_login.png', fullPage: true });
+            await this.page.screenshot({ path: './screenshots/"My_page"_or(and)_profile_link(s)_is_not_visible_after_user_login.png', fullPage: true });
             await expect(this.myPageLink, '"My page" link is not displayed').toBeVisible();
             await expect(this.profileLink, "Profile link is not displayed").toBeVisible();
         }
