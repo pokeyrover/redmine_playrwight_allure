@@ -5,11 +5,11 @@ export const existingUser = {
     password: 'tyughj'
 };
 
-export const baseUrl = 'https://www.redmine.org'
+export const baseUrl = 'https://www.redmine.org';
 
-const randomFirstName = faker.name.firstName()
-const randomLastName = faker.name.lastName()
-const randomPassword = faker.internet.password()
+const randomFirstName = faker.name.firstName();
+const randomLastName = faker.name.lastName();
+const randomPassword = faker.internet.password();
 
 export const fakeUser = {
     login: randomFirstName + randomLastName,
@@ -17,4 +17,6 @@ export const fakeUser = {
     firstName: randomFirstName,
     lastName: randomLastName,
     email: `${randomFirstName}${randomLastName}@mailinator.com`
-}
+};
+
+export const randomWord = faker.random.word();

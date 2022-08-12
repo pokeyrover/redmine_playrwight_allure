@@ -18,16 +18,26 @@ exports.MainPage = class MainPage {
         this.reigsterLink = page.locator('#account .register');
         this.myPageLink = page.locator('[href="/my/page"]');
         this.profileLink = page.locator('#loggedas .user');
+
+        this.searchInput = page.locator('#q')
         
         this.issuesTab = page.locator('#main-menu .issues');
 
         this.documentationNavigationLink = page.locator('.toc [href="#Documentation"]');
         
-        this.userGuideWikiLink = page.locator('//h2/a[@href="#Documentation"]/../following-sibling::ul//*[contains(@href,"/Guide")]')
+        this.userGuideWikiLink = page.locator('//h2/a[@href="#Documentation"]/../following-sibling::ul//*[contains(@href,"/Guide")]');
     }
 
     async goto() {
         await this.page.goto(this.url);
+    }
+
+    async fillSearchField (word) {
+        await this.searchInput.fill(word);
+    }
+
+    async pressEnter (inputField) {
+        await inputField.press('Enter');
     }
 
     async documentationNaviLinkClick () {
@@ -59,7 +69,7 @@ exports.MainPage = class MainPage {
             await expect(this.profileLink).toHaveText(existingUser.login);
         }
         else {
-            await page.screenshot({ path: '../screenshots/"My page" or/and profile link(s) is not visible after user login.png', fullPage: true });
+            await this.page.screenshot({ path: './screenshots/"My_page"_or/and_profile_link(s)_is_not_visible_after_user_login.png', fullPage: true });
             await expect(this.myPageLink, '"My page" link is not displayed').toBeVisible();
             await expect(this.profileLink, "Profile link is not displayed").toBeVisible();
         }

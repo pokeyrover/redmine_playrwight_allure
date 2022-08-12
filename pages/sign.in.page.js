@@ -32,7 +32,7 @@ exports.SignInPage = class SignInPage{
             await expect(this.confirmMessage, 'Confirmation email in confirm message is wrong').toHaveText(email);
         }
         else {
-            await page.screenshot({ path: '../screenshots/Confirm page is not displayed after registration on the login page', fullPage: true });
+            await this.page.screenshot({ path: './screenshots/Confirm_page_is_not_displayed_after_registration_on_the_login_page.png', fullPage: true });
             await expect(this.confirmMessage, 'Confirm message is not displayed on the login page');
         }
     }
